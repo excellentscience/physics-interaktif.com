@@ -1001,9 +1001,7 @@ body {
   object-fit: cover;
   border: 4px solid white;
   margin-bottom: 20px;
-
-  /* Tambahan untuk membuatnya di tengah */
-  display: block;
+   display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1112,14 +1110,12 @@ ul {
 @media (min-width: 640px) {
   /* sm breakpoint */
   .student-image {
-    max-width: 400px;
     height: 200px;
   }
 }
 @media (min-width: 1024px) {
   /* lg breakpoint */
   .student-image {
-    max-width: 400px;
     height: 250px;
   }
 }
