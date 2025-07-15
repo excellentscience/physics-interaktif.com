@@ -1097,6 +1097,13 @@ ul {
 /* Memastikan gambar mengisi area tanpa terdistorsi */
 .student-image {
   width: 100%;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 100%;
+  display: block;
+  margin: auto;
   height: 150px; /* Tinggi tetap untuk gambar */
   object-fit: cover; /* Memastikan gambar mengisi area dan terpotong jika perlu */
   border-radius: 0.75rem; /* Menyesuaikan dengan rounded-xl Tailwind */
