@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisika Interaktif</title>
+
+<!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Unicons for icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav
+      class="navbar fixed top-0 left-0 w-full flex justify-between items-center py-4 px-7 shadow-lg z-50"
+    >
+      <!-- Left Navigation Links -->
+      <div class="flex items-center flex-grow justify-start md:w-1/3">
+        <div class="navbar-nav-left hidden md:flex">
+          <a
+            href="#home"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#concepts"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Concepts & methods</a
+          >
+        </div>
+      </div>
+      <!-- Center Logo -->
+      <a
+        href="#"
+        class="navbar-logo text-3xl font-bold md:absolute md:left-1/2 md:-translate-x-1/2"
+        >Fisika<span class="text-blue-500">Interaktif</span>.</a
+      >
+
+      <!-- Right Group -->
+      <div class="flex items-center flex-grow justify-end md:w-1/3">
+        <div class="navbar-nav-right hidden md:flex">
+          <a
+            href="#gallery"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Gallery</a
+          >
+          <a
+            href="#topics"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Learning topics</a
+          >
+          <a
+            href="#teacher"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Teacher</a>
+          <a
+            href="#student"
+            class="mx-4 text-lg hover:text-blue-500 transition-colors"
+            >Student</a>
+        </div>
+        <button
+          id="theme-toggle"
+          class="text-2xl hover:text-blue-500 transition-colors ml-4 hidden md:block"
+        >
+         
+        <!-- Mobile menu toggle -->
+         <div class="menu">
+        <button
+          class="text-2xl hover:text-blue-500 transition-colors ml-4 md:hidden"
+        >
+          <a href="#student" id="users"> <i data-feather="users"></i> </a>
+        </button>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-gray-900 bg-opacity-95 z-[9998] flex flex-col items-center justify-center space-y-8 transform -translate-x-full transition-transform duration-300 ease-in-out"
+    >
+      <button
+        id="close-mobile-menu"
+        class="absolute top-8 right-8 text-white text-3xl"
+      >
+        <i data-feather="x"></i>
+      </button>
+      <a
+        href="#home"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Beranda</a
+      >
+      <a
+        href="#about"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Tentang Kami</a
+      >
+      <a
+        href="#concepts"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Konsep & Metode</a
+      >
+      <a
+        href="#gallery"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Galeri Eksperimen</a
+      >
+      <a
+        href="#topics"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Topik Pembelajaran</a
+      >
+      <a
+        href="#contact"
+        class="text-white text-3xl hover:text-blue-500 transition-colors"
+        onclick="closeMobileMenu()"
+        >Kontak</a
+      >
+    </div>
+    <!-- End Mobile Navigation Overlay -->
+
+    <!-- Main Content (Add padding-top to account for fixed header) -->
+    <main class="main pt-20">
+      <!-- Home Section -->
+      <section
+        class="home section min-h-screen flex flex-col items-center justify-center py-16 text-center"
+        id="home"
+      >
+        <div
+          class="home-container container mx-auto px-4 flex flex-col items-center gap-8"
+        >
+          <!-- Home Image (now central and prominent) -->
+          <img
+            src="logo.jpg"
+            alt="Fisika Interaktif Logo"
+            class="home-img w-64 h-64 rounded-full object-cover shadow-xl mb-8"
+            onerror="this.onerror=null;this.src='https://placehold.co/300x300/4299e1/ffffff?text=Fisika+Interaktif';"
+          />
+
+          <!-- Home Data (main text content, always centered) -->
+          <div class="home-data max-w-2xl mx-auto">
+            <h1 class="home-title text-5xl font-extrabold leading-tight mb-2">
+              Jelajahi Dunia<span class="text-blue-500">Fisika</span>.
+            </h1>
+            <h3 class="home-subtitle text-2xl font-semibold mb-4">
+              Memahami Alam Semesta Melalui Eksperimen dan Teori
+            </h3>
+            <p class="home-description text-base leading-relaxed mb-8">
+              Selamat datang di portal pembelajaran fisika interaktif! Kami
+              menyediakan sumber daya komprehensif, mulai dari konsep dasar
+              hingga eksperimen mendalam, untuk membantu Anda memahami keajaiban
+              alam semesta.
+            </p>
+            <a
+              href="#topics"
+              class="button inline-flex items-center px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all transform"
+            >
+              Mulai Belajar
+              <i class="uil uil-arrow-right ml-2 text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Social Links (separate and centered) -->
+        
+          <!-- Contact Info (separate and centered) -->
+          <div
+            class="my-info flex flex-col md:flex-row justify-center gap-6 w-full max-w-3xl"
+          >
+           
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section class="about section py-16" id="about">
+        <h2 class="section-title" data-heading="Our Story">Tentang Kami</h2>
+
+        <div
+          class="about-container container mx-auto px-4 grid lg:grid-cols-2 items-center gap-8"
+        >
+          <!-- About Image -->
+          <img
+            src="tentang.jpg"
+            alt="Fisika Eksperimen"
+            class="about-img w-72 h-72 rounded-xl object-cover shadow-xl mx-auto lg:mx-0"
+            onerror="this.onerror=null;this.src='https://placehold.co/350x350/4299e1/ffffff?text=Fisika+Eksperimen';"
+          />
+
+          <!-- About Data -->
+          <div class="about-data text-center lg:text-left">
+            <h3 class="about-heading text-3xl font-bold mb-4">
+              Misi Kami: Menjelajahi Fisika
+            </h3>
+            <p
+              class="about-description text-base leading-relaxed text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+            >
+              Kami berdedikasi untuk membuat fisika dapat diakses dan menarik
+              bagi semua orang. Dengan pendekatan yang berpusat pada eksperimen
+              dan penjelasan yang jelas, kami bertujuan untuk menginspirasi
+              generasi ilmuwan berikutnya.
+            </p>
+
+            <div
+              class="about-info flex flex-wrap justify-center lg:justify-start gap-6 mb-12"
+            >
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i class="uil uil-award about-icon text-4xl mb-2"></i>
+                <h3 class="about-title text-xl font-semibold">
+                  Tahun Dedikasi
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >10+ Tahun Pendidikan Fisika</span
+                >
+              </div>
+
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i class="uil uil-book-alt about-icon text-4xl mb-2"></i>
+                <h3 class="about-title text-xl font-semibold">
+                  Topik Pembelajaran
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >50+ Topik Tersedia</span
+                >
+              </div>
+
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i class="uil uil-flask about-icon text-4xl mb-2"></i>
+                <h3 class="about-title text-xl font-semibold">
+                  Dukungan Eksperimen
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >Panduan Eksperimen Lengkap</span
+                >
+              </div>
+            </div>
+
+            <a
+              href="#concepts"
+              class="button inline-flex items-center px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all transform"
+            >
+              Mulai belajar
+              <i class="uil uil-navigator ml-2 text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concepts & Methods Section -->
+      <section class="qualification section py-16" id="concepts">
+        <h2 class="section-title" data-heading="Our Standards">
+          Konsep Fisika & Metode Pembelajaran
+        </h2>
+
+        <div
+          class="qualification-container container mx-auto px-4 grid lg:grid-cols-2 gap-12"
+        >
+          <!-- Physics Concepts -->
+          <div class="physics-concepts">
+            <h3
+              class="qualification-title text-2xl font-bold mb-6 flex items-center justify-center lg:justify-start"
+            >
+              <i class="uil uil-lightbulb-alt text-3xl mr-2"></i>Konsep Fisika
+            </h3>
+
+            <div class="timeline relative pl-8">
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Konsep Dasar Fisika
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Pengantar tentang apa itu fisika, ruang lingkupnya, dan
+                  mengapa penting untuk memahami dunia di sekitar kita.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Mekanika Klasik
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Mempelajari hukum gerak Newton, energi, momentum, dan konsep
+                  dasar mekanika yang menjelaskan pergerakan benda makroskopis.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Elektromagnetisme
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Memahami fenomena listrik dan magnet, hukum-hukum Maxwell, dan
+                  bagaimana gelombang elektromagnetik bekerja.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Termodinamika
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Studi tentang panas, kerja, energi, dan entropi, serta
+                  aplikasinya dalam mesin dan sistem fisik.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Fisika Kuantum
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Pengantar ke dunia sub-atomik, dualitas gelombang-partikel,
+                  dan prinsip ketidakpastian.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learning Methods -->
+          <div class="learning-methods">
+            <h3
+              class="qualification-title text-2xl font-bold mb-6 flex items-center justify-center lg:justify-start"
+            >
+              <i class="uil uil-graduation-cap text-3xl mr-2"></i>Metode
+              Pembelajaran
+            </h3>
+
+            <div class="timeline relative pl-8">
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Pembelajaran Interaktif
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Menggunakan simulasi, kuis, dan latihan praktis untuk
+                  memperdalam pemahaman.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Visualisasi Konsep
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Diagram, grafik, dan animasi yang membantu memvisualisasikan
+                  konsep fisika yang kompleks.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Pendekatan Praktis
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Fokus pada aplikasi fisika dalam kehidupan sehari-hari dan
+                  teknologi.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 rounded-full border-4 transform -translate-x-1/2"
+                ></div>
+                <h3 class="timeline-title text-lg font-semibold mb-1">
+                  Studi Kasus Mendalam
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Analisis fenomena fisika kompleks melalui studi kasus nyata
+                  dan pemecahan masalah.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery section py-16" id="gallery">
+        <div class="gallery-header text-center mb-12">
+          <h2 class="section-title" data-heading="Visual Feast">
+            Galeri Eksperimen & Dokumentasi
+          </h2>
+          <h3 class="text-xl font-medium">Lihat Fisika dalam Aksi!</h3>
+        </div>
+
+        <div
+          class="gallery-container container mx-auto px-4 grid lg:grid-cols-4 md:grid-cols-2 gap-6"
+        >
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="parabola.jpg"
+              alt="Eksperimen Gerak Parabola"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Eksperimen+Gerak+Parabola';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Eksperimen Gerak Parabola
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="listrik.jpg"
+              alt="Demonstrasi Sirkuit Listrik"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Demonstrasi+Sirkuit+Listrik';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Demonstrasi Sirkuit Listrik
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="suhu.jpg"
+              alt="Pengukuran Suhu"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Pengukuran+Suhu';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Pengukuran Suhu
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="lensa.jpg"
+              alt="Optik Lensa"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Optik+Lensa';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Optik Lensa
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="suara.jpg"
+              alt="Analisis Gelombang Suara"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Analisis+Gelombang+Suara';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Analisis Gelombang Suara
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="Hukum Archimedes.jpg"
+              alt="Praktek Hukum Archimedes"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Praktek+Hukum+Archimedes';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Praktek Hukum Archimedes
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="Percobaan Efek Doppler.png"
+              alt="Percobaan Efek Doppler"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Percobaan+Efek+Doppler';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Percobaan Efek Doppler
+            </div>
+          </div>
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="Simulasi Medan Magnet.jpg"
+              alt="Simulasi Medan Magnet"
+              class="w-full h-64 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/4299e1/ffffff?text=Simulasi+Medan+Magnet';"
+            />
+            <div class="gallery-caption p-4 text-lg font-semibold">
+              Simulasi Medan Magnet
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topics Section -->
+      <section class="section py-16" id="topics">
+        <div class="container mx-auto px-4">
+          <div class="sub-title text-center">Area Pembelajaran Kami</div>
+          <div class="main-title text-center text-5xl font-extrabold mb-12">
+            Topik Pembelajaran
+          </div>
+
+          <div class="menu-buttons flex justify-center gap-4 mb-12 flex-wrap">
+            <button
+              onclick="filterTopics('mechanics')"
+              class="px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Mekanika
+            </button>
+            <button
+              onclick="filterTopics('thermodynamics')"
+              class="px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Termodinamika
+            </button>
+            <button
+              onclick="filterTopics('optics')"
+              class="px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Optika
+            </button>
+            <button
+              onclick="filterTopics('electromagnetism')"
+              class="px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Elektromagnetisme
+            </button>
+          </div>
+
+          <div
+            class="menu-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            id="topicList"
+          >
+            <!-- Example Topics -->
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="mechanics"
+            >
+              <img
+                src="newton.jpg"
+                alt="Hukum Newton"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Hukum Newton
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Dasar-dasar gerak dan gaya.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="mechanics"
+            >
+              <img
+                src="proyektil.jpg"
+                alt="Gerak Proyektil"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Gerak Proyektil
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Analisis lintasan benda di udara.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="thermodynamics"
+            >
+              <img
+                src="heat.jpg"
+                alt="Hukum Termodinamika"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Hukum Termodinamika
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Prinsip dasar energi dan panas.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="thermodynamics"
+            >
+              <img
+                src="konduksi.jpg"
+                alt="Transfer Panas"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Transfer Panas
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Konduksi, konveksi, dan radiasi.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="optics"
+            >
+              <img
+                src="cahaya.jpg"
+                alt="Refraksi Cahaya"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Refraksi Cahaya
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Pembelokan cahaya saat melewati medium berbeda.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="optics"
+            >
+              <img
+                src="bayangan.jpg"
+                alt="Pembentukan Bayangan"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Pembentukan Bayangan
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Melalui lensa dan cermin.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="electromagnetism"
+            >
+              <img
+                src="ohm.jpg"
+                alt="Hukum Ohm"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">Hukum Ohm</div>
+                <div class="menu-price text-sm font-semibold">
+                  Hubungan antara tegangan, arus, dan resistansi.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="menu-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              data-category="electromagnetism"
+            >
+              <img
+                src="magnet.jpg"
+                alt="Medan Magnet"
+                class="w-full h-48 object-cover"
+              />
+              <div class="menu-info p-6">
+                <div class="menu-name text-2xl font-bold mb-2">
+                  Medan Magnet
+                </div>
+                <div class="menu-price text-sm font-semibold">
+                  Konsep dan aplikasi medan magnet.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section py-16" id="teacher">
+        <div class="gallery-header text-center mb-12">
+          <h2 class="section-title" data-heading="Visual Feast">
+           Di Balik Ilmu Ada Mereka
+          </h2>
+          </div>
+      <header class="hero">
+    <div class="container">
+      <img src="ustzh.jpeg" alt="Foto Guru" class="profile-img" />
+      <h1>Ustzh Sulhana Umi Atiqah </h1>
+      <p>Guru Fisika MASDA - 17 Tahun Pengalaman Mengajar</p>
+    </div>
+  </header>
+
+  <section class="about container">
+    <h2>Tentang Saya</h2>
+    <br>
+    <p>Saya adalah guru fisika dengan semangat tinggi dalam mengajar dan membimbing siswa memahami ilmu alam. Saya percaya bahwa sains adalah jendela dunia.</p>
+  </section>
+<br>
+  <section class="education container">
+    <h2>Pendidikan</h2>
+    <br>
+    <ul>
+      <li>SDN 147985 Padangsidimpuan</li>
+      <li>S1 Pendidikan – Universitas Negeri Medan</li>
+    </ul>
+  </section>
+<br>
+  <section class="experience container">
+    <h2>Pengalaman Mengajar</h2>
+    <br>
+    <ul>
+      <li>2008-2009 Guru Fisika di pesantren Darul Mursyid</li>
+      <li>2010–2015 Guru Fisika di SMP N 6 Bertaraf International Banda Aceh</li>
+      <li>2016 Guru Fisika di SMk Wira Karya Mandiri</li>
+      <li>2016 Pembimbing Olimpiade Di SDIT Al-Fityan</li>
+      <li>Sekarang Guru Fisika di MAS Darul Arafah</li>
+    </ul>
+  </section>
+
+<section class="gallery section py-16" id="student">
+<body class="p-4 sm:p-8">
+    <div class="container mx-auto py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-80 mb-12">"Keluarga Kecil Penuh Cerita"</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  <!-- Contoh Profil Murid 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="rasyid.jpg" alt="Foto Murid 1" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Rasyid Al-fatin Irwansyah</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="rehan.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Muhammad Rehan Lubis</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="javier.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Adrian Ghali Javier Lubis</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="trian.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Triansyah Kholis Nugraha</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="raihan.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Raihan Muzakki Agustiawan</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="azam.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Azam Bazila Puja</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="indra.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Indra Al-amin Boang Manalu</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="habib.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Habib Luthfi</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="dzaki.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Dzaki Al-afkari</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="marshal.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Achmad Marshal Fatansyah</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="aidil.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Aidil Akbar</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="syarif.jpg" alt="Foto Murid 2" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Syarif Sulaiman</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="aran.jpg" alt="Foto Murid 3" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Aran Ar-rasyid</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Contoh Profil Murid 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="sholeh.jpg" alt="Foto Murid 4" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Sholeh Udin Siregar</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <!-- Tambahkan lebih banyak profil sesuai kebutuhan -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="ahmad zaki.jpg" alt="Foto Murid 5" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Ahmad zaky</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="arga.jpg" alt="Foto Murid 6" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Arga Alfitra Lubis</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="jay.jpg" alt="Foto Murid 7" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Wijaya Kesuma Lubis</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 shake-on-hover">
+                <img src="chelsea.jpg" alt="Foto Murid 8" class="student-image p-4 pb-0 rounded-t-xl">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800">Chelsea Alif Haziq</h3>
+                    <p class="text-sm text-gray-600">Excellent Science</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer py-8 text-center text-gray-400">
+      <div class="container mx-auto px-4">
+        <p>Tetap Semangat!</p>
+      </div>
+          <h1 class="footer-title text-white text-2xl font-bold mb-2">
+            Fisika<span class="text-blue-500">Interaktif<span>.
+          </h1>
+          <span class="footer-subtitle text-gray-400 text-sm block mb-6"
+            >Sampai Jumpa di Puncak</span
+          >
+
+          <ul class="footer-links flex justify-center space-x-6 mb-6">
+            <li>
+              <a
+                href="#home"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#concepts"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Concepts</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#topics"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Learning topics</a
+              >
+            </li>
+            <li>
+              <a
+                href="#teacher"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Teacher</a
+              >
+            </li>
+            </ul>
+
+          
+            </a>
+          </div>
+
+          <span class="footer-copy text-gray-500 text-xs block"
+            >&copy; By Reyhan. All rights reserved.</span
+          >
+        </div>
+      </footer>
+    </main>
+     <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
