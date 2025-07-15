@@ -1097,7 +1097,6 @@ ul {
 /* Memastikan gambar mengisi area tanpa terdistorsi */
 .student-image {
   width: 100%;
-  width: 100%;
   max-width: 150px;
   height: 150px;
   object-fit: cover;
@@ -1113,12 +1112,14 @@ ul {
 @media (min-width: 640px) {
   /* sm breakpoint */
   .student-image {
+    max-width: 400px;
     height: 200px;
   }
 }
 @media (min-width: 1024px) {
   /* lg breakpoint */
   .student-image {
+    max-width: 400px;
     height: 250px;
   }
 }
