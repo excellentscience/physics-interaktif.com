@@ -1023,6 +1023,8 @@ ul {
   text-align: center;
 }
 
+p { text-align: center; }
+
 /* Responsive & Navbar Toggle */
 .navbar-toggle {
   display: none;
